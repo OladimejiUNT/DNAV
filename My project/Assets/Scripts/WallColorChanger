@@ -1,31 +1,48 @@
 using UnityEngine;
 
-public class WallColorChanger : MonoBehaviour
+public class HospitalWallColors : MonoBehaviour
 {
-    public Renderer wallRenderer;   // Drag your wall here in Inspector
+    [Header("Lobby Walls")]
+    public Renderer[] lobbyWalls;
 
-    public Material whiteMaterial;
-    public Material blueMaterial;
-    public Material greenMaterial;
-    public Material redMaterial;
+    [Header("Radiology Walls")]
+    public Renderer[] radiologyWalls;
 
-    
-    public void SetWhite()
+    [Header("General Hallway Walls")]
+    public Renderer[] hallwayWalls;
+
+    [Header("Materials")]
+    public Material lobbyMaterial;      // black
+    public Material radiologyMaterial;  // green
+    public Material hallwayMaterial;    // white
+
+    void Start()
     {
-        wallRenderer.material = whiteMaterial;
+        SetWallColors();
     }
 
-    public void SetBlue()
+    void SetWallColors()
     {
-        wallRenderer.material = blueMaterial;
-    }
+        // Lobby
+        foreach (Renderer wall in lobbyWalls)
+        {
+            wall.material = lobbyMaterial;
+        }
 
-    public void SetGreen()
-    {
-        wallRenderer.material = greenMaterial;
-    }
+        // Radiology
+        foreach (Renderer wall in radiologyWalls)
+        {
+            wall.material = radiologyMaterial;
+        }
 
-    public void SetRed()
+        // Hallways
+        foreach (Renderer wall in hallwayWalls)
+        {
+            wall.material = hallwayMaterial;
+        }
+    }
+}
+
     {
         wallRenderer.material = redMaterial;
     }
