@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class WallColorChanger : MonoBehaviour
+{
+    public Renderer wallRenderer;   // Drag your wall here in Inspector
+
+    public Material whiteMaterial;
+    public Material blueMaterial;
+    public Material greenMaterial;
+    public Material redMaterial;
+
+    
+    public void SetWhite()
+    {
+        wallRenderer.material = whiteMaterial;
+    }
+
+    public void SetBlue()
+    {
+        wallRenderer.material = blueMaterial;
+    }
+
+    public void SetGreen()
+    {
+        wallRenderer.material = greenMaterial;
+    }
+
+    public void SetRed()
+    {
+        wallRenderer.material = redMaterial;
+    }
+}
